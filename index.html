@@ -26,7 +26,8 @@
         .result-item {
             text-align: center;
         }
-        .result-item img {
+        .result-item img,
+        .result-item video { /* CHANGED: 让 video 也有同样样式 */
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -48,7 +49,8 @@
             <hr>
             <div class="row justify-content-center mt-4">
                 <div class="col-auto">
-                    <a class="btn btn-primary" href="#" target="_blank">
+                    <!-- CHANGED: 让 Paper 按钮指向 intro.pdf -->
+                    <a class="btn btn-primary" href="./intro.pdf" target="_blank">
                         📄 Paper (Anonymous)
                     </a>
                 </div>
@@ -107,37 +109,71 @@
                 <h3>Videos</h3>
                 <hr>
                 <div class="result-grid">
+
+                    <!-- CHANGED: 用 <video> + <source> 而不是 <img src="xxx.mp4"> -->
+
                     <div class="result-item">
-                        <img src="./discussion_cam01_concatenated_view0.mp4" alt="Source">
-                        <p class="mt-2"><strong>Meet Room (Scence: Discussion). The model is trained with cam00, cam06, and cam12, and tested on cam01. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./discussion_cam01_concatenated_view0.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Meet Room (Scene: Discussion). The model is trained with cam00, cam06, and cam12, and tested on cam01.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./discussion_cam05_concatenated.mp4" alt="Result 1">
-                        <p class="mt-2"><strong>Tested on cam05. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./discussion_cam05_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam05.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./discussion_cam08_concatenated.mp4" alt="Result 2">
-                        <p class="mt-2"><strong>Tested on cam08. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./discussion_cam08_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam08.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./discussion_cam10_concatenated.mp4" alt="Result 2">
-                        <p class="mt-2"><strong>Tested on cam10. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./discussion_cam10_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam10.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./martini_cam08_concatenated_view6.mp4" alt="Result 3">
-                        <p class="mt-2"><strong>N3DV (Scence: Coffee Martini). The model is trained with cam00, cam09, and cam19, and tested on cam08. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./martini_cam08_concatenated_view6.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>N3DV (Scene: Coffee Martini). The model is trained with cam00, cam09, and cam19, and tested on cam08.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./martini_cam10_concatenated.mp4" alt="Result 3">
-                        <p class="mt-2"><strong>Tested on cam10. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./martini_cam10_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam10.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./martini_cam18_concatenated.mp4" alt="Result 3">
-                        <p class="mt-2"><strong>Tested on cam18. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./martini_cam18_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam18.</strong></p>
                     </div>
+
                     <div class="result-item">
-                        <img src="./martini_cam20_concatenated.mp4" alt="Result 3">
-                        <p class="mt-2"><strong>Tested on cam20. </strong></p>
+                        <video controls preload="metadata">
+                            <source src="./martini_cam20_concatenated.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                        <p class="mt-2"><strong>Tested on cam20.</strong></p>
                     </div>
                 </div>
             </div>
@@ -150,16 +186,16 @@
             <div class="col-12">
                 <h3>Part Results</h3>
                 <hr>
-                <img src="./visual.pdf" 
-                     class="img-fluid" alt="Method">
+                <!-- CHANGED: 用 embed 显示 PDF，而不是 img -->
+                <embed src="./visual.pdf"
+                       type="application/pdf"
+                       style="width:100%; height:600px; border:1px solid #ddd; border-radius:8px;" />
                 <p class="mt-3 text-justify">
                     Qualitative Results in N3DV and Meet Room Datasets with 3 training views. Novel view results produced by 3DGStream, QUEEN, and StreamLoD for comparison.
                 </p>
             </div>
         </div>
     </div>
-
-
 
     <footer class="container text-center mt-5 mb-4">
         <hr>
