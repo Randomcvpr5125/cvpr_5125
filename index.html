@@ -31,7 +31,9 @@
         }
         .result-item img,
         .result-item embed {
-            width: 100%;        
+            width: 100%; 
+            height: auto; 
+            max-height: 80vh; 
         }
         
         .result-item video {
@@ -83,7 +85,7 @@
                   </div>
                 </div>
 
-                <p class="text-left">
+                <p class="mt-3 text-justify">
                     3D Gaussian Splatting enables photorealistic and practical free-viewpoint video rendering due to its real-time rendering ability. However, Streaming Free-Viewpoint Video (SFVV) introduces new challenges, including fast optimization, maintaining high fidelity with sparse views, and minimizing storage requirements for efficient bandwidth usage. In this work, we propose StreamLoD-GS, an LoD-based Gaussian Splatting framework designed specifically for SFVV. Our approach includes: 1) an Anchor- and Octree-based LoD-structured 3DGS with a hierarchical Gaussian dropout technique to ensure efficient and stable optimization while maintaining high-quality rendering; 2) a GMM-based motion partitioning mechanism that separates dynamic and static content, refining dynamic regions while preserving background stability; and 3) a quantized residual refinement framework that reduces storage requirements without compromising visual quality. Extensive experiments demonstrate that StreamLoD-GS achieves competitive or state-of-the-art performance in terms of quality, efficiency, and storage, outperforming related methods.
                 </p>
             </div>
